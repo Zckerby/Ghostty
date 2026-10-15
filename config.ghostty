@@ -1,0 +1,26 @@
+# --- Font ---
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+
+# --- Cursor ---
+cursor-style = block
+# Shell integration switches the cursor to a bar at the prompt by default; keep it a block
+shell-integration-features = no-cursor
+
+# --- Theme / glass ---
+theme = light:cyberdream-light,dark:cyberdream
+# Fake frosted glass: each theme file sets a pre-blurred wallpaper as background-image.
+# Window stays opaque so sharp windows behind don't show through the "glass".
+background-image-fit = stretch
+background-image-opacity = 1.0
+
+# --- Clipboard ---
+copy-on-select = clipboard
+# Ctrl+C copies only when text is selected; otherwise it still interrupts (SIGINT)
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard
+
+# --- tmux ---
+# Every new Ghostty window attaches to (or creates) the "main" tmux session.
+# Full path because linuxbrew may not be on PATH when Ghostty launches from the desktop.
+command = /home/linuxbrew/.linuxbrew/bin/tmux new-session -A -s main
